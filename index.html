@@ -81,7 +81,7 @@
                         </use>
                     </svg>
                     <h3 class="font-caps">Внимание к деталям</h3>
-                    <p>Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
+                    <span>Идейные соображения, а также начало повседневной работы по формированию позиции.</span>
                 </li>
                 <li>
                     <svg class="icon-advantages">
@@ -89,7 +89,7 @@
                         </use>
                     </svg>
                     <h3 class="font-caps">Пунктуальность</h3>
-                    <p>Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</p>
+                    <span>Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</span>
                 </li>
                 <li>
                     <svg class="icon-advantages">
@@ -97,7 +97,7 @@
                         </use>
                     </svg>
                     <h3 class="font-caps">Планирование</h3>
-                    <p>Равным образом консультация с широким активом в значительной степени обуславливает.</p>
+                    <span>Равным образом консультация с широким активом в значительной степени обуславливает.</span>
                 </li>
                 <li>
                     <svg class="icon-advantages">
@@ -105,7 +105,7 @@
                         </use>
                     </svg>
                     <h3 class="font-caps">Современные технологии</h3>
-                    <p>Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>
+                    <span>Значимость этих проблем настолько очевидна, что реализация плановых заданий.</span>
                 </li>
             </ul>
           </section>
@@ -117,15 +117,15 @@
             <ul class="business-list">
               <li>
                 <img src="./img/main/algorythm.png" width="370" alt="">
-                <p class="font-caps flex-blocks-centred">десктопные приложения</p>
+                <span class="font-caps flex-blocks-centred">десктопные приложения</span>
               </li>
                 <li>
                     <img src="./img/main/phone.png" width="370" alt="">
-                    <p class="font-caps flex-blocks-centred">мобильные приложения</p>
+                    <span class="font-caps flex-blocks-centred">мобильные приложения</span>
                 </li>
                 <li>
                     <img src="./img/main/paint.png" width="370" alt="">
-                    <p class="font-caps flex-blocks-centred">дизайнерские решения</p>
+                    <span class="font-caps flex-blocks-centred">дизайнерские решения</span>
                 </li>
             </ul>
           </section>
@@ -138,7 +138,7 @@
                      <img src="./img/main/lukyanenko.jpg" width="270" alt="Лукьяненко">
                         <div class="team-item">
                          <b>Игорь Демьяненко</b>
-                         <p>Product Designer</p>
+                         <span>Product Designer</span>
                          <ul class="social-links">
                              <li> 
                                 <a href="#">
@@ -179,7 +179,7 @@
                      <img src="./img/main/repina.jpg" width="270" alt="Репина">
                     <div class="team-item">
                      <b>Ольга Репина</b>
-                     <p>Frontend Developer</p>
+                     <span>Frontend Developer</span>
                     <ul class="social-links">
                         <li>
                             <a href="#">
@@ -220,7 +220,7 @@
                      <img src="./img/main/tarasov.jpg" width="270" alt="Тарасов">
                     <div class="team-item"> 
                          <b>Николай Тарасов</b>
-                         <p>Marketing</p>
+                         <span>Marketing</span>
                         <ul class="social-links">
                             <li>
                                 <a href="">
@@ -261,7 +261,7 @@
                     <img src="./img/main/ermakov.jpg" width="270" alt="Ермаков">
                   <div class="team-item">
                      <b>Михаил Ермаков</b>
-                     <p>UI Designer</p>
+                     <span>UI Designer</span>
                     <ul class="social-links">
                         <li> 
                             <a href="#">
@@ -361,6 +361,7 @@
         <div class="logo-social-title">
             <a class="logo logo-footer" href=""><span>Web</span>Studio</a>
             <h3 class="font-caps social-heading">присоединяйтесь</h3>
+            <h3 class="font-caps social-heading">подпишитесь на рассылку</h3>
         </div>
 <div class="address-social">
         <address>
@@ -407,6 +408,19 @@
                 </a>
             </li>
         </ul>
+
+        <form>
+            <input class="email-footer"  type="email" name="email" placeholder="    E-mail" />
+            <button type="submit" class="send-btn">
+            <section class="flex-blocks-centred">
+                <span class="send">Подписаться</span>
+                <svg class="icon-send" width="24" height="24">
+                    <use href="./img/sprite.svg#icon-send">
+                    </use>
+                </svg>
+            </section>
+            </button>
+        </form>
      </div> 
     </footer>
 </div>
@@ -418,6 +432,44 @@
                 </use>
             </svg>
         </button>
+
+        
+
+        <form name="contact-form" class="contact-form">
+            <h3 class="contact-heading">Оставьте свои данные, мы Вам перезвоним</h3>
+
+         <section class="contact-form-wrap">
+            
+
+            <label for="name" class="name">
+               Имя 
+               <input type="text" name="name" id="name" placeholder="">
+            </label>
+
+            <label for="tel" class="tel">
+                Телефон
+                <input type="tel" name="tel" id="tel" placeholder="">
+            </label>
+            <label for="email" class="email">
+                Почта
+                <input type="email" name="email" id="email" placeholder="">
+            </label>
+            <label for="comments">
+                Комментарий
+            <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Введите текст"></textarea>
+            </label>
+         </section>
+          <div class="confirmation flex-blocks-centred">
+                <svg class="icon-mail">
+                <use href="./img/sprite.svg#icon-confirm">
+                </use>
+            </svg>
+            <span>Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></span>
+         </div>
+            <button type="submit" class="contact-form-btn"> Отправить </button>
+         
+          
+        </form>
     </div>
 </div>
 <script src="./js/modal.js"></script>
