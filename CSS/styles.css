@@ -14,6 +14,7 @@
 	--address-color: #757575;
 	--fontsize-header-footer-advantage: 14px;
 	--fontsize-team-projectsdesc-buttons: 16px;
+	
 }
 
 /* глобальные настройки и сброс по умолчанию*/
@@ -26,19 +27,20 @@
 	padding: 0px;
 }
 
+
 :visited {
-	color: inherit;
-	
+	color: inherit;	
 }
+
 li {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
-	display: block;
-	
+	display: block;	
 }
-a, button {
+a, button, input, textarea {
 	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -53,7 +55,6 @@ body {
 	font-weight: normal;
 	
 	font-size: var(--fontsize-team-projectsdesc-buttons);
-	/* background-color: var(--background-basic-color); */
 }
 /* ======= класс, который прячет ====== */
 .visually-hidden {
@@ -113,13 +114,8 @@ body {
 	font-style: var(--font-style);
 	letter-spacing: 0.06em;
 	font-size: 16px;
-
     border: 0px;
 	border-radius: 4px;
-	background: var(--hover-web-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    color: var(--accent-color);
-
 	cursor: pointer;
 }
 
@@ -166,6 +162,8 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
 	cursor: pointer;
+	color: black;
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
 	visibility: 0;
@@ -194,18 +192,31 @@ body {
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: #757575;
+	fill: var(--font-heading-color);
 
 }
 
 
 
-input[placeholder]{
+.contact-form input[placeholder]{
 	padding-left: 38px;
 }
 
 textarea[placeholder]{
-	padding: 12px 16px;
+padding: 12px 16px;
+	
+font-size: 14px;
+line-height: 1.14;
+letter-spacing: 0.01em;
+
+color: rgba(117, 117, 117, 0.5);
 }
+
+.comments:focus::placeholder,
+.comments::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
 textarea{
 	display: block;
 	width: 448px;
@@ -214,6 +225,7 @@ textarea{
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
+	resize: none;
 }
 
 .contact-form input{
@@ -226,72 +238,64 @@ textarea{
 
 	border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+	
 }
-.contact-form label {
+.contact-form-wrap label {
 	position: relative;
+	
 }
-
-.name {
-	--icon-type: url("../img/icon-name.svg");
-}
-.tel {
-	--icon-type: url("../img/icon-tel.svg");
-}
-.email {
-	--icon-type: url("../img/icon-mail.svg");
-}
-
-.contact-form-wrap label:not(:last-child)::before{
+  
+.icon-contact-form {
 	position: absolute;
 	top: 32px;
-	left: 15px;
-	display: block;
-	
-	content: "";
-	width: 16px;
-	height: 12px;
-	background-image: var(--icon-type);
-	background-repeat: no-repeat;
-	background-size: contain;
-	color: var(--font-heading-color);
+	left: 12px;
 }
+
+
 .confirmation{
 	margin-top: 20px;
 }
+.icon-confirm{
+	fill: var(--font-heading-color);
+	margin-right: 8px;
+}
 
-.confirmation span{
+.confirmation {
 	font-size: 14px;
     line-height: 1.7px;
-    /* letter-spacing: 0.03em; */
+    
     color: #757575;
 }
-.confirmation a{
+.confirmation::before{
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 7px;
+	
+	background-image: url("../img/icon-confirm.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 2px;
+}
+
+.confirmation a {
 	display: inline-block;
     color: var(--hover-web-color);
 	text-decoration: underline;
+	margin-left: 0.3rem;
 }
-.contact-form-btn{
+.contact-form-btn {
 	min-width: 200px;
     height: 50px;
-	
+	/* line-height: 1.9; */
 	margin-top: 30px; 
 	margin-bottom: 40px;
 	margin-left: 164px;
-	font-weight: bold;
-    line-height: 1.9;
-    letter-spacing: 0.06em;
-	font-family: var(--font-family);
-	font-style: var(--font-style);
-	letter-spacing: 0.06em;
-	font-size: 16px;
-
-    border: 0px;
-	border-radius: 4px;
+	
 	background: var(--hover-web-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--accent-color);
-
-	cursor: pointer;
 }
 
 
@@ -306,7 +310,7 @@ textarea{
 header {
 	display: flex;
 	align-items: center;
-	/* justify-content: space-between; */
+	
 	padding: 25px 0;
 	font-weight: 500;
 	line-height: 1;
@@ -450,6 +454,7 @@ address {
     width: 358px;
     height: 50px;
     margin-left: 93px;
+	padding: 15px;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -466,23 +471,12 @@ address {
 	min-width: 200px;
     height: 50px;
 	margin-left: 10px;
+	line-height: 1.9;
 	
-    
-	font-weight: bold;
-    line-height: 1.9;
-    letter-spacing: 0.06em;
-	font-family: var(--font-family);
-	font-style: var(--font-style);
-	letter-spacing: 0.06em;
-	font-size: 16px;
-
-	border-radius: 4px;
 	background: var(--hover-web-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--accent-color);
 
-	cursor: pointer;
-	
 }
 
 .icon-send {
@@ -535,6 +529,38 @@ header a:focus {
 .contacts:focus {
 	color: var(--hover-web-color);
 	fill: var(--hover-web-color);
+}
+.contact-form input:focus,
+.contact-form textarea:focus
+ {
+     border: 1px solid var(--hover-web-color);
+	 outline: none; 
+	
+}
+.contact-form input:focus + span {
+     color: var(--hover-web-color);
+	 outline: none;
+	 
+}
+
+.icon-contact-form-wrap {
+	color: var(--font-heading-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	fill: currentColor;
+}
+
+.contact-form-btn:hover,
+.contact-form-btn:focus {
+	background-color:  #188CE8;
+}
+.confirm:checked + .confirmation::before{
+	background-image: url("../img/icon-confirmed.svg");
+	background-color: var(--hover-web-color);
+}
+
+.modal-close-btn:hover {
+	color :var(--hover-web-color);
+	fill: currentColor;
 }
 
 /* =========== social links icons ======= */
@@ -619,10 +645,9 @@ header a:focus {
 
 /* ============ НАШИ ПРЕИМУЩЕСТВА =============== */
 .advantages {
-	padding: 94px 0;
-	
-	/* background-color: var(--background-basic-color); */
-}
+	padding: 94px 0;	
+	}
+
 .advantages-list {
 	
 	display: flex;
@@ -786,17 +811,10 @@ header a:focus {
 
 	font-weight: 500;
 	line-height: 1.62;
-	font-family: inherit;
-	font-style: inherit;
-	letter-spacing: inherit;
-	font-size: inherit;
 	
-	border-radius: 4px;
-	border: 0px;
 	color: var(--font-heading-color);
 	background-color: var(--background-team-button-color);
 
-	cursor: pointer;
 }
 
 .filter li:not(:last-child) {
